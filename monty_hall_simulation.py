@@ -1,29 +1,32 @@
 import sys, os
 import random
 
-# 玩一次 monty-hall 遊戲
+# 定義玩一次 monty-hall game
 def monty_hall_game(switch):
     doors = [1,2,3]
     prize = random.choice(doors)
     sheep = doors.copy(); sheep.remove(prize)
     choice = random.randint(1,3)
+
+    # 決定主持人要開出的門: show
     if prize==choice:
-        show = random.choice(sheep) # 一開始就挑到中獎的, show就從剩下的隨機挑
+        show = random.choice(sheep) # 一開始就挑到中獎的, show就從剩下的sheep隨機挑
     else:
-        # 一開始選到羊, show從移除choice prize挑剩下的
+        # 一開始選到羊, show就從移除 choice & prize 之中挑剩下的
         show = doors.copy()
         show.remove(choice); show.remove(prize)
         show = show[0]
 
-    # 決定 final choice
+    # 決定玩家最後的選擇: final choice
     if switch=='true':
-        # 如果選擇換，則最後的選擇一定是choice, show剩下的
+        # 如果選擇換，則最後的選擇一定是 choice & show 之中挑剩下的
         remain = doors.copy(); remain.remove(choice); remain.remove(show)
         final_choice = remain[0]
     elif switch=='false':
+        # 如果選擇不換，最後選擇跟原本的不變
         final_choice = choice
 
-    # 如果final choice 選中prize就是 win; 反之就是 lose
+    # 如果 final choice 選中 prize就是 win; 反之就是 lose
     if final_choice==prize:
         return 'win'
     else:
