@@ -25,4 +25,4 @@ python3 monty_hall_simulation.py 1000 false
 python3 monty_hall_sumulation.py 1000 true
 ```
 輸出結果
-`win rate: 37.32 %`
+`win rate: 67.32 %`
