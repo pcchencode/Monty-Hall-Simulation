@@ -1,5 +1,5 @@
 # Monty-Hall-Simulation
-python實作經典統計問題-Monty Hall Problem
+python實作模擬：經典統計問題 - Monty Hall Problem
 
 
 ## 使用方式
