@@ -1,8 +1,8 @@
 import sys, os
 import random
 
-
-def monty_hall_game(switch='false'):
+# 玩一次 monty-hall 遊戲
+def monty_hall_game(switch):
     doors = [1,2,3]
     prize = random.choice(doors)
     sheep = doors.copy(); sheep.remove(prize)
@@ -15,13 +15,15 @@ def monty_hall_game(switch='false'):
         show.remove(choice); show.remove(prize)
         show = show[0]
 
+    # 決定 final choice
     if switch=='true':
         # 如果選擇換，則最後的選擇一定是choice, show剩下的
         remain = doors.copy(); remain.remove(choice); remain.remove(show)
         final_choice = remain[0]
-    else:
+    elif switch=='false':
         final_choice = choice
 
+    # 如果final choice 選中prize就是 win; 反之就是 lose
     if final_choice==prize:
         return 'win'
     else:
