@@ -29,7 +29,7 @@ def monty_hall_game(switch):
     else:
         return 'lose'
 
-def simulation(switch, n=100):
+def simulation(n, switch):
     win_num = 0
     for i in range(0, n):
         if monty_hall_game(switch) == 'win':
