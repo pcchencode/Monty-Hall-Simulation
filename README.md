@@ -5,7 +5,7 @@ python實作經典統計問題-Monty Hall Problem
 ## 使用方式
 1. git clone this repo
 
-2. cd into thie workdir
+2. cd into this workdir
 
 3. 輸入指令:
 ```
