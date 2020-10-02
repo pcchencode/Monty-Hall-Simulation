@@ -8,12 +8,11 @@ def monty_hall_game(n_d, switch):
     for i in range(1, n_d+1):
         doors.append(i)
 
-
     prize = random.choice(doors)
     sheep = doors.copy(); sheep.remove(prize)
     choice = random.randint(1,n_d)
 
-    # 決定主持人要開出的門: show
+    # 主持人決定要開出的門: show
     if prize==choice:
         show = random.sample(sheep, n_d-2) # 一開始就挑到中獎的, show就從剩下的sheep隨機挑 (n_d-2) 個
     else:
