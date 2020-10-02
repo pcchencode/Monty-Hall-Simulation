@@ -3,18 +3,15 @@ import random
 
 # 定義玩一次 monty-hall game, 擴展至 n_d 個門
 def monty_hall_game(n_d, switch):
+    # doors = [1,2,3]
     doors = []
     for i in range(1, n_d+1):
         doors.append(i)
 
-    # doors = [1,2,3]
+
     prize = random.choice(doors)
     sheep = doors.copy(); sheep.remove(prize)
     choice = random.randint(1,n_d)
-
-    # print(prize)
-    # print(sheep)
-    # print(choice)
 
     # 決定主持人要開出的門: show
     if prize==choice:
@@ -24,9 +21,6 @@ def monty_hall_game(n_d, switch):
         show = doors.copy()
         show.remove(choice); show.remove(prize)
         # show = show[0]
-
-    # print(show)
-
 
     # 決定玩家最後的選擇: final choice
     if switch=='true':
